@@ -67,7 +67,7 @@ def delete_user(user_id: int):
 
 
 @app.get('/users/{user_id}/', response_model=UserPublic)
-def get_user(user_id: int):
+def read_user_by_id(user_id: int):
     if user_id > len(database) or user_id < 1:
         raise HTTPException(
             status_code=HTTPStatus.NOT_FOUND, detail='User not found'
